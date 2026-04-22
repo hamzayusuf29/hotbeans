@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Hot Beans Web</title>
+
+  <style>
+    body {
+      font-family: Arial;
+      margin: 0;
+      background-color: #eef3f8;
+      font-size: 18px;
+    }
+
+    header {
+      background-color: #0b3d91;
+      color: white;
+      padding: 25px;
+      text-align: center;
+    }
+
+    nav {
+      background-color: #1f5fbf;
+      overflow: hidden;
+    }
+
+    nav button {
+      background: none;
+      border: 2px solid white;
+      color: white;
+      padding: 16px 28px;
+      cursor: pointer;
+      float: left;
+      font-size: 18px;
+      margin: 5px;
+    }
+
+    nav button:hover {
+      background-color: white;
+      color: #1f5fbf;
+    }
+
+    .container {
+      padding: 25px;
+    }
+
+    .card {
+      background: white;
+      padding: 20px;
+      margin: 20px 0;
+      border-radius: 8px;
+    }
+
+    .page {
+      display: none;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 12px;
+      font-size: 16px;
+      margin-top: 5px;
+    }
+
+    input[type="submit"] {
+      background-color: #0b3d91;
+      color: white;
+      border: none;
+      cursor: pointer;
+      margin-top: 15px;
+      padding: 15px;
+      font-size: 18px;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #1f5fbf;
+    }
+  </style>
+
+</head>
+<body>
+
+<header>
+  <h1>Hot Beans Web</h1>
+  <p>Start your career in web development with a professional IT company</p>
+</header>
+
+<nav>
+  <button onclick="showPage('home')">Home</button>
+  <button onclick="showPage('about')">About</button>
+  <button onclick="showPage('jobs')">Jobs</button>
+  <button onclick="showPage('apply')">Apply</button>
+</nav>
+
+<div class="container">
+
+  <!-- HOME -->
+  <div id="home" class="page">
+    <div class="card">
+      <h2>Welcome</h2>
+      <p>
+        Welcome to Hot Beans Web. We are a growing web development company that specialises in creating modern, high-quality websites for a range of clients. 
+        We are currently looking to recruit new developers who are passionate about technology and ready to begin their career in the IT industry.
+      </p>
+      <p>
+        This website is designed for individuals who have recently completed web development courses or qualifications and are now looking for their first role as a web developer. 
+        Our aim is to provide clear information about our company, the roles available, and how you can apply.
+      </p>
+    </div>
+
+    <div class="card">
+      <h2>Recommended Courses</h2>
+      <p>These courses can help you improve your web development skills:</p>
+      <ul>
+        <li><a href="https://www.w3schools.com">W3Schools Web Development</a></li>
+        <li><a href="https://www.codecademy.com">Codecademy Programming Courses</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <div id="about" class="page">
+    <div class="card">
+      <h2>Company Profile</h2>
+      <p>
+        Hot Beans Web is a professional web development company that focuses on building responsive, user-friendly websites for businesses. 
+        We use modern technologies such as HTML, CSS and JavaScript to create high-quality digital solutions.
+      </p>
+    </div>
+
+    <div class="card">
+      <h2>Our Trainee Developers</h2>
+      <p><b>John:</b> A front-end trainee developer who works on website layouts and user interfaces.</p>
+      <p><b>Sarah:</b> A full-stack trainee developer who works on both front-end and back-end systems.</p>
+    </div>
+  </div>
+
+  <!-- JOBS -->
+  <div id="jobs" class="page">
+    <div class="card">
+      <h2>Junior Web Developer Role</h2>
+
+      <p>
+        We are looking for motivated individuals who have recently completed a web development course or qualification and are ready to begin their career in the IT industry.
+      </p>
+
+      <p><b>Key Responsibilities:</b></p>
+      <ul>
+        <li>Develop and maintain websites using HTML, CSS and JavaScript</li>
+        <li>Work as part of a team to complete projects</li>
+        <li>Test websites to ensure they function correctly</li>
+      </ul>
+
+      <p><b>Requirements:</b></p>
+      <ul>
+        <li>Basic knowledge of web development languages</li>
+        <li>Good problem-solving skills</li>
+        <li>Ability to work independently and in a team</li>
+      </ul>
+
+      <p><b>Qualifications:</b></p>
+      <ul>
+        <li>BTEC Level 3 IT or equivalent qualification</li>
+        <li>Completion of a web development course</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- APPLY -->
+  <div id="apply" class="page">
+    <div class="card">
+      <h2>Apply for a Position</h2>
+
+      <p>
+        Please complete the form below to apply for a junior web developer role at Hot Beans Web. 
+        Make sure you provide accurate information so we can review your application.
+      </p>
+
+      <form onsubmit="return validateForm()">
+        <label>Full Name:</label><br>
+        <input type="text" id="name"><br><br>
+
+        <label>Email Address:</label><br>
+        <input type="text" id="email"><br><br>
+
+        <label>Describe your experience and skills:</label><br>
+        <textarea id="exp" rows="6"></textarea><br><br>
+
+        <input type="submit" value="Submit Application">
+      </form>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  function showPage(page) {
+    let pages = document.getElementsByClassName("page");
+    for (let i = 0; i < pages.length; i++) {
+      pages[i].style.display = "none";
+    }
+    document.getElementById(page).style.display = "block";
+  }
+
+  function validateForm() {
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+
+    if (name === "" || email === "") {
+      alert("Please fill in all fields");
+      return false;
+    }
+
+    if (!email.includes("@")) {
+      alert("Enter a valid email address");
+      return false;
+    }
+
+    alert("Application submitted successfully!");
+    return true;
+  }
+
+  showPage('home');
+</script>
+
+</body>
+</html>
