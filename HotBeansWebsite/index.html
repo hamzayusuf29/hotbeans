@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hot Beans Web</title>
+
+  <style>
+    body {
+      font-family: Arial;
+      margin: 0;
+      background-color: #eef3f8;
+      font-size: 18px;
+    }
+
+    header {
+      background-color: #0b3d91;
+      color: white;
+      padding: 25px;
+      text-align: center;
+    }
+
+    nav {
+      background-color: #1f5fbf;
+      overflow: hidden;
+    }
+
+    nav button {
+      background: none;
+      border: 2px solid white;
+      color: white;
+      padding: 16px 28px;
+      cursor: pointer;
+      float: left;
+      font-size: 18px;
+      margin: 5px;
+    }
+
+    nav button:hover {
+      background-color: white;
+      color: #1f5fbf;
+    }
+
+    .container {
+      padding: 25px;
+    }
+
+    .card {
+      background: white;
+      padding: 20px;
+      margin: 20px 0;
+      border-radius: 8px;
+    }
+
+    .page {
+      display: none;
+    }
+
+    img {
+      width: 100%;
+      border-radius: 8px;
+      margin-top: 10px;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 12px;
+      font-size: 16px;
+      margin-top: 5px;
+    }
+
+    input[type="submit"] {
+      background-color: #0b3d91;
+      color: white;
+      border: none;
+      cursor: pointer;
+      margin-top: 15px;
+      padding: 15px;
+      font-size: 18px;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #1f5fbf;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>Hot Beans Web</h1>
+  <p>Start your career in web development with a professional IT company</p>
+</header>
+
+<nav>
+  <button onclick="showPage('home')">Home</button>
+  <button onclick="showPage('about')">About</button>
+  <button onclick="showPage('jobs')">Jobs</button>
+  <button onclick="showPage('apply')">Apply</button>
+</nav>
+
+<div class="container">
+
+  <!-- HOME -->
+  <div id="home" class="page">
+    <div class="card">
+      <h2>Welcome</h2>
+      <p>
+        Welcome to Hot Beans Web. We are a premier digital solutions agency dedicated to crafting high-performance, responsive websites for global brands. Our mission is two-fold: providing top-tier results for our clients and cultivating the next generation of digital talent. Whether you are a business looking for a web presence or a developer looking for your first big break, you are in the right place.
+      </p>
+      <img src="https://www.cio.com/wp-content/uploads/2025/05/481311-0-03239600-1747722667-shutterstock_2102457385.jpg?quality=50&strip=all&w=1024" alt="Web development">
+    </div>
+
+    <div class="card">
+      <h2>Recommended Courses</h2>
+      <ul>
+        <li>
+          <a href="https://www.w3schools.com" target="_blank">W3Schools</a> - 
+          An essential resource for quick syntax lookups and interactive coding tutorials.
+        </li>
+        <li>
+          <a href="https://www.codecademy.com" target="_blank">Codecademy</a> - 
+          A structured platform for mastering JavaScript logic and backend programming.
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <div id="about" class="page">
+    <div class="card">
+      <h2>Company Profile</h2>
+      <p>
+        Hot Beans Web is a professional web development company that focuses on building responsive, user-friendly websites for businesses.
+      </p>
+      <img src="https://itcareerswitch.co.uk/wp-content/uploads/2023/02/it-career-switch-6-most-in-demand-tech-jobs-in-the-uk.jpg" alt="Office">
+    </div>
+
+    <div class="card">
+      <h2>Success Stories</h2>
+
+      <p><b>John:</b><br>
+      John joined us with a basic understanding of HTML. Through our 6-month mentorship program, he mastered CSS Grid and Flexbox. He now leads our frontend UI design team, ensuring every site we build is visually stunning and user-friendly. <i>"Hot Beans gave me the tools to turn my hobby into a career."</i>
+      </p>
+
+      <p><b>Sarah:</b><br>
+      Sarah transitioned into web development after completing a Level 3 IT course. At Hot Beans, she specialized in Backend logic and Database management. She is now a Full-Stack developer responsible for our most complex client portals. Sarah is a testament to how our training program builds industry-ready experts.
+      </p>
+
+      <img src="https://images.stockcake.com/public/8/4/9/8496ab55-25c7-4fde-a416-0d7bbc9478d7_large/tech-team-working-stockcake.jpg" alt="Team">
+    </div>
+  </div>
+
+  <!-- JOBS -->
+  <div id="jobs" class="page">
+    <div class="card">
+      <h2>Junior Web Developer Role</h2>
+
+      <p><b>Key Responsibilities:</b></p>
+      <ul>
+        <li>Develop and maintain websites using HTML, CSS and JavaScript</li>
+        <li>Work as part of a team</li>
+        <li>Test websites</li>
+      </ul>
+
+      <p><b>Requirements:</b></p>
+      <ul>
+        <li>Basic knowledge of web development</li>
+        <li>Problem-solving skills</li>
+        <li>Teamwork</li>
+        <li>Strong analytical skills and a passion for clean, documented code</li>
+        <li>Ability to collaborate in an Agile environment using version control (Git)</li>
+        <li>Commitment to continuous learning</li>
+      </ul>
+
+      <img src="https://images.stockcake.com/public/e/d/6/ed690338-0202-4c5d-978e-c202791d3c11_large/coding-team-collaboration-stockcake.jpg" alt="Coding">
+    </div>
+  </div>
+
+  <!-- APPLY -->
+  <div id="apply" class="page">
+    <div class="card">
+      <h2>Apply</h2>
+
+      <form onsubmit="return validateForm()">
+        <label>Full Name:</label>
+        <input type="text" name="fullname" id="name" required placeholder="Enter your full name">
+
+        <label>Email:</label>
+        <input type="email" name="email" id="email" required placeholder="Enter your email">
+
+        <label>Experience:</label>
+        <textarea id="exp" required placeholder="Describe your skills"></textarea>
+
+        <input type="submit" value="Submit">
+
+        <p><small>
+          Privacy Note: By submitting this form, you agree to Hot Beans Web storing your data for recruitment purposes only. We comply with GDPR regulations.
+        </small></p>
+      </form>
+
+      <img src="https://img.freepik.com/free-photo/website-hosting-concept-with-bright-light_23-2149406783.jpg?semt=ais_hybrid&w=740&q=80" alt="Application form">
+    </div>
+  </div>
+
+</div>
+
+<script>
+function showPage(page) {
+  let pages = document.getElementsByClassName("page");
+  for (let i = 0; i < pages.length; i++) {
+    pages[i].style.display = "none";
+  }
+  document.getElementById(page).style.display = "block";
+}
+
+function validateForm() {
+  let email = document.getElementById("email").value;
+
+  if (!email.includes("@") || !email.includes(".")) {
+    alert("Enter a valid email");
+    return false;
+  }
+
+  alert("Application submitted!");
+  return true;
+}
+
+showPage('home');
+</script>
+
+</body>
+</html>
